@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ivanlab_bot
+spec:
+  selector:
+    matchLabels:
+      app: ivanlab_bot
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ivanlab_bot
+    spec:
+      containers:
+      - name: ivanlab_bot
+        image: ivanlab/ivanlab_bot
+        imagePullPolicy: IfNotPresent
